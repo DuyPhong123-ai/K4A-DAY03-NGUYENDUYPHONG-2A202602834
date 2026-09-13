@@ -37,6 +37,7 @@ TOOLS_SCHEMA = [
     #    - advisor_name (string): Tên cố vấn học tập
     # 3. Khai báo danh sách các trường bắt buộc (required).
     # --------------------------------------------------------------------------
+    # Tool 2: schedule appointment
     {
         "name": "schedule_appointment",
         "description": "Đặt lịch hẹn tư vấn học vụ với Cố vấn học tập VinUni.",
@@ -44,8 +45,20 @@ TOOLS_SCHEMA = [
             "type": "object",
             "properties": {
                 # TODO 1.2: Khai báo các thuộc tính tham số cho Tool tại đây...
+                "student_id": {
+                    "type": "string",
+                    "description": "Mã sinh viên cần tra cứu (ví dụ: '2026001')"
+                },
+                "datetime_str": {
+                    "type": "string",
+                    "description": "Thời gian hẹn (ví dụ: '14:00 15/09/2026')"
+                },
+                "advisor_name": {
+                    "type": "string",
+                    "description": "Tên cố vấn học tập (ví dụ: 'Võ Tự Đức')"
+                },
             },
-            "required": [] # TODO 1.2: Khai báo danh sách các trường bắt buộc tại đây...
+            "required": ["student_id", "datetime_str", "advisor_name"] # TODO 1.2: Khai báo danh sách các trường bắt buộc tại đây...
         }
     }
 ]
